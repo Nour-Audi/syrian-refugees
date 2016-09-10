@@ -1,0 +1,18 @@
+{
+    "contents" : "ref <- read.csv(\"refugees.csv\", stringsAsFactors=FALSE)\n\nlibrary(leaflet)\n\n# Be sure to first set the working directory in R to where the file is listed\n\nm <- leaflet(ref) %>% addTiles('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', \n                              attribution='Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a> &mdash; Map data &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>') \nm %>% setView(-72.690940, 41.651426, zoom = 8)\nm %>% addCircles(~y, ~x, popup=ref$Refugees, weight = 3, radius=ref$Refugees*10, \n                 color=\"#ffa500\", stroke = TRUE, fillOpacity = 0.8)\n\n\n\nm <- leaflet(ref) %>% addTiles('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', \n                               attribution='Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a> &mdash; Map data &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>') \nm %>% setView(-72.690940, 41.651426, zoom = 8)\nm %>% addCircleMarkers(~y, ~x, popup=ref$Refugees, weight = 3, radius=ref$Refugees, \n                 color=\"#ffa500\", stroke = TRUE, fillOpacity = 0.2)\n\n\n\n?addCircles\n",
+    "created" : 1447792009551.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4091222416",
+    "id" : "45BFB0B0",
+    "lastKnownWriteTime" : 1447796614,
+    "path" : "~/Documents/Github/syrian_refugees/refugee_map.R",
+    "project_path" : "refugee_map.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
